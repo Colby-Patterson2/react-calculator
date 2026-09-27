@@ -169,13 +169,13 @@ function App() {
         <header className="calculator-header">
           <div>
             <p className="eyebrow">Pocket arithmetic</p>
-            <h1>Calculate<span>.</span></h1>
+            <h1>Calculator</h1>
           </div>
           <div className="status-light" aria-hidden="true" />
         </header>
 
         <div className="display" aria-live="polite">
-          <span className="expression">{expression || 'Ready when you are'}</span>
+          {/* <span className="expression">{expression || 'Ready when you are'}</span> */}
           <strong className={display === 'Error' ? 'error' : ''}>{display}</strong>
         </div>
 
@@ -192,7 +192,7 @@ function App() {
             </button>
           ))}
         </div>
-        <p className="hint">Keyboard ready <span>•</span> try 12 + 7</p>
+        <p className="hint">Keyboard Ready</p>
       </section>
     </main>
   )
