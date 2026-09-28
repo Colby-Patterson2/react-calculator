@@ -175,7 +175,6 @@ function App() {
         </header>
 
         <div className="display" aria-live="polite">
-          <span className="expression">{expression || 'Ready when you are'}</span>
           <strong className={display === 'Error' ? 'error' : ''}>{display}</strong>
         </div>
 
@@ -192,7 +191,6 @@ function App() {
             </button>
           ))}
         </div>
-        <p className="hint">Keyboard Ready</p>
       </section>
     </main>
   )
