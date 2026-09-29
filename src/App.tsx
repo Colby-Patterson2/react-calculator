@@ -45,6 +45,8 @@ function App() {
 
   const enterDigit = (digit: string) => {
     if (display === 'Error' || waitingForOperand) {
+      // Only a result or error resets the expression; a pending operator (e.g. "5 +") should persist.
+      if (display === 'Error' || operator === null) setExpression('')
       setDisplay(digit)
       setWaitingForOperand(false)
       return
@@ -54,6 +56,7 @@ function App() {
 
   const enterDecimal = () => {
     if (display === 'Error' || waitingForOperand) {
+      if (display === 'Error' || operator === null) setExpression('')
       setDisplay('0.')
       setWaitingForOperand(false)
     } else if (!display.includes('.')) {
@@ -168,7 +171,7 @@ function App() {
       <section className="calculator" aria-label="Calculator">
         <header className="calculator-header">
           <div>
-            <p className="eyebrow">Pocket arithmetic</p>
+            <p className="eyebrow">React Calculator</p>
             <h1>Calculator</h1>
           </div>
           <div className="status-light" aria-hidden="true" />
